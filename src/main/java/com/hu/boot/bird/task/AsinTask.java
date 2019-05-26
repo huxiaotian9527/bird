@@ -43,9 +43,9 @@ public class AsinTask {
 
     public static String url = "https://www.amazon.de/dp/";
 
-        @Scheduled(cron = "0 0 0/6 * * ?")
-//    @Scheduled(cron = "0 0/1 * * * ?")
     //定时任务每3小时执行一次
+//    @Scheduled(cron = "0 0/1 * * * ?")
+    @Scheduled(cron = "0 0 0/6 * * ?")
     private void runTask() {
         log.info("【aws定时任务】: 开始执行拉取定时任务");
         try {
