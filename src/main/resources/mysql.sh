@@ -19,8 +19,10 @@ flush privileges;       --刷新
 7.修改mysql配置文件 bind-address为0.0.0.0，并重启mysql
 cd /etc/mysql/mysql.conf.d
 vi mysqld.cnf
-
 systemctl restart mysql
+
+8.mysql5.7修改root用密码登陆
+update user set authentication_string = password('root123'), plugin='mysql_native_password',password_expired = 'N', password_last_changed = now() where user = 'root';
 
 
 /********************************ubuntu安装jdk环境************************************************/
