@@ -81,7 +81,7 @@ public class AsinTask {
                 List<AwsAsinRank> awsAsinRank;
                 while ((awsAsinRank = toList(goods,header,today,h)) == null) {
                     try {
-                        Thread.sleep(1000);
+                        Thread.sleep(10000);
                         log.info("重新处理商品 " + goods);
                     } catch (Exception e) {
 
