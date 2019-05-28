@@ -36,10 +36,14 @@ rz jdk-8u211-linux-x64.tar.gz
 tar -xzvf jdk-8u211-linux-x64.tar.gz
 
 4.设置环境变量
+vi ~/.bashrc
+将以下命令粘贴至文件最后
 export JAVA_HOME=/usr/local/jdk1.8.0_211
 export JRE_HOME=${JAVA_HOME}/jre
 export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
 export PATH=.:${JAVA_HOME}/bin:$PATH
+生效
+source ~/.bashrc
 
 5.启动springboot项目，后面要加个 & 符号，这样ctrl+c就会不会关闭boot项目
 java -jar bird-0.0.1-SNAPSHOT.jar &
