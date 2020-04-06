@@ -14,3 +14,4 @@ server:
 mybatis:
   typeAliasesPackage: com.hu.boot.bird.po
   mapperLocations: classpath:mybatis/*.xml
+
