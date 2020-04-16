@@ -4,7 +4,6 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/hu?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT&useSSL=true&verifyServerCertificate=false
     username: root
     password: root123
-    driver-class-name: com.mysql.jdbc.Driver
   profiles:
     active: dev
 
@@ -15,3 +14,4 @@ server:
 mybatis:
   typeAliasesPackage: com.hu.boot.bird.po
   mapperLocations: classpath:mybatis/*.xml
+

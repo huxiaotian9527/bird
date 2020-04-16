@@ -21,13 +21,12 @@ import java.io.IOException;
 @Slf4j
 public class UserFilter implements Filter {
 
-//标示符：表示当前用户未登录(可根据自己项目需要改为json样式)
 
-    String NO_LOGIN = "您还未登录";
+    private String NO_LOGIN = "您还未登录";
 
     //不需要登录就可以访问的路径(比如:注册登录等)
 
-    String[] includeUrls = new String[]{"/login", "/register", "/login.html"};
+    private String[] includeUrls = new String[]{"/login", "/register", "/login.html"};
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
@@ -59,7 +58,7 @@ public class UserFilter implements Filter {
     }
 
     /**
-     * @Description: 是否需要过滤
+     * 是否需要过滤
      */
     public boolean isNeedFilter(String uri) {
         for (String includeUrl : includeUrls) {

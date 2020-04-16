@@ -2,7 +2,6 @@ package com.hu.boot.bird.config;
 
 import com.hu.boot.bird.filter.UserFilter;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.StringHttpMessageConverter;
@@ -40,8 +39,8 @@ class WebMvcConfig implements WebMvcConfigurer{
         converters.add(converter);
     }
 
-
-    public FilterRegistrationBean someFilterRegistration1() {
+//    @Bean  暂时关闭过滤器，方便我测试
+    public FilterRegistrationBean someFilterReation() {
         //新建过滤器注册类
         FilterRegistrationBean registration = new FilterRegistrationBean();
         // 添加我们写好的过滤器
