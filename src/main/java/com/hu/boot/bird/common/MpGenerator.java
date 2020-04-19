@@ -23,6 +23,7 @@ import java.util.Scanner;
 public class MpGenerator {
 
     private static String packageName = "";
+    private static String parentPackage = "com.kingdee.finance.shanghai.credit.nfcs2";
     //表名，逗号分隔
     private static String tableName = "t_borrower_info,t_debt,t_debt_batch,t_debt_loan_detail,t_debt_original,t_debt_payback_detail,t_loan_business_info,t_loan_rate_info";
 
@@ -47,7 +48,7 @@ public class MpGenerator {
         final String projectPath = System.getProperty("user.dir");
         System.out.println("projectPath:"+projectPath);
         gc.setOutputDir(projectPath + "/src/main/java");
-        gc.setAuthor("CJJ");
+        gc.setAuthor("htt");
         gc.setOpen(false);
         // gc.setSwagger2(true); 实体属性 Swagger2 注解
         gc.setFileOverride(true);
@@ -86,7 +87,7 @@ public class MpGenerator {
         // 包配置
         final PackageConfig pc = new PackageConfig();
         pc.setModuleName(packageName);
-        pc.setParent("com.hu.boot.bird");
+        pc.setParent(parentPackage);
         mpg.setPackageInfo(pc);
 
         // 自定义配置
