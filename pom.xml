@@ -104,18 +104,28 @@
             <version>2.9.2</version>
         </dependency>
 
-        <!--引入mybatis-plus-->
+        <!--引入mybatis-plus start-->
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
             <version>3.2.0</version>
         </dependency>
-        <!--引入mybatis plus代码生成插件-->
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>3.5.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis-spring</artifactId>
+            <version>2.0.2</version>
+        </dependency>
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-generator</artifactId>
             <version>3.2.0</version>
         </dependency>
+        <!--引入mybatis-plus end-->
         <!--velocity模版引擎-->
         <!-- https://mvnrepository.com/artifact/org.apache.velocity/velocity -->
         <dependency>

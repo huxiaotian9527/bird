@@ -1,0 +1,123 @@
+#server Config
+server:
+  port: 9950
+  tomcat:
+    uri-encoding: UTF-8
+    remoteIpHeader: X-Forwarded-For
+    protocolHeader: X-Forwarded-Proto
+  context-path: /finance-shanghai-credit
+  max-http-header-size: 10000000
+
+project.version: 0.0.1
+#spring Config
+spring:
+  profiles:
+    active: development #默认development环境
+  application:
+    name: finance-shanghai-credit  #项目名称，eureka消费者获取服务时所需value
+  datasource:
+    url: jdbc:mysql://172.22.23.160:3306/finance_shcis_credit?zeroDateTimeBehavior=convertToNull&amp;useUnicode=true&amp;characterEncoding=utf-8&amp;allowMultiQueries=true
+    username: JR_dev
+    password: dev160@sscf
+    driver-class-name: com.mysql.jdbc.Driver
+  boot:
+    admin:
+      url: http://172.22.23.146:8989
+      client:
+        prefer-ip: true
+  http:
+    encoding:
+      charset: UTF-8
+
+#spring boot admin Client Config
+management:
+  port: 9954     #admin管理端口  规则为项目端口+4
+  security:
+    enabled: false
+  health:
+    redis:
+      enabled: false
+#Finance Config
+finance.config-url: http://devpub.julicai.com/syscnf/api
+
+spring.application.name: finance-shanghai-credit
+
+#nodeId
+server.config.nodeid: 9990
+
+logging:
+  path: logs/${spring.application.name}/
+  level: info
+
+mybatis-plus:
+  mapper-locations: classpath*:mybatis/*.xml
+# http pool config
+http.maxTotal: 500
+http.defaultMaxPerRoute: 100
+http.connectTimeout: 10000
+http.connectionRequestTimeout: 20000
+http.socketTimeout: 180000
+http.maxIdleTime: 1
+http.keepAliveTimeOut: 65
+
+---
+spring.profiles: development
+finance.quartz.enable.task: true
+syscnf:
+  common:
+    setting:
+      groupid: 6f21a02fd76b1b8732f82db0d3dd3497
+
+---
+spring:
+  profiles: test
+  datasource:
+    url: jdbc:mysql://testdb.julicai.com:3306/finance_shanghai_credit?zeroDateTimeBehavior=convertToNull&amp;useUnicode=true&amp;characterEncoding=utf-8&amp;allowMultiQueries=true
+    username: JR_app_user
+    password: '#b3,_fcHdH7#20c3,Hdbb52b5b#_'
+spring.boot.admin.url: http://lc.feidee.net/boot-admin
+finance.quartz.enable.task: true
+finance:
+  config-url: http://lc.feidee.net/syscnf/api
+syscnf:
+  common:
+    setting:
+      groupid: 6f21a02fd76b1b8732f82db0d3dd3497
+
+---
+spring.profiles: uat
+finance.quartz.enable.task: true
+management.port: 9055     #uat 环境端口号和 run 环境要区分
+spring.application.name: finance-shanghai-credit_uat
+spring:
+  datasource:
+    username: finance-shanghai-credit_uat
+spring.boot.admin.url: http://lcadmin.ssjlicai.com/springboot-admin-uat
+finance:
+  config-url: http://lcsrvuat.julicai.com:8511/finance-syscnf/api
+eureka:
+  client:
+    service-url:
+      defaultZone: http://admin:2018.ssj.com@cloudzoneuat.ssjlicai.com/eureka/
+syscnf:
+  common:
+    setting:
+      groupid: 6f21a02fd76b1b8732f82db0d3dd3497
+
+---
+spring.profiles: runtask
+finance.quartz.enable.task: true
+spring:
+  datasource:
+    username: finance-shanghai-credit
+spring.boot.admin.url: http://lcadmin.ssjlicai.com/springboot-admin-run
+finance:
+  config-url: http://lcsrv.julicai.com/syscnf/api
+eureka:
+  client:
+    service-url:
+      defaultZone: http://admin:2018.ssj.com@cloudzone.ssjlicai.com/eureka/
+syscnf:
+  common:
+    setting:
+      groupid: 6f21a02fd76b1b8732f82db0d3dd3497
