@@ -12,7 +12,7 @@ server:
 
 #mybatis在配置xml路径的时候，注意classpath建立的目录是有层级的多个文件夹，而不是com.hu.bird.test这种一个文件夹
 mybatis:
-  typeAliasesPackage: com.hu.boot.bird.po
+  typeAliasesPackage: com.hu.boot.bird.aws.po
   mapperLocations: classpath:mybatis/*.xml
 
 #

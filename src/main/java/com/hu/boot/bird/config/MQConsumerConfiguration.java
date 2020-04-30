@@ -3,7 +3,7 @@ package com.hu.boot.bird.config;
 import com.alibaba.rocketmq.client.consumer.DefaultMQPushConsumer;
 import com.alibaba.rocketmq.client.exception.MQClientException;
 import com.alibaba.rocketmq.common.consumer.ConsumeFromWhere;
-import com.hu.boot.bird.comsumer.MQConsumeMsgListenerProcessor;
+import com.hu.boot.bird.mq.comsumer.MQConsumeMsgListenerProcessor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

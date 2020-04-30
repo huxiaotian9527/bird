@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 @SpringBootApplication
-@MapperScan(value = {"com.hu.boot.bird.dao"},basePackages = "com.hu.boot.bird.nfcs.mapper")
+@MapperScan(value = {"com.hu.boot.bird.aws.dao"},basePackages = "com.hu.boot.bird.nfcs.mapper")
 @EnableWebMvc
 public class BirdApplication {
 
