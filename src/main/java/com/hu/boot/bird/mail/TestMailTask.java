@@ -1,6 +1,5 @@
 package com.hu.boot.bird.mail;
 
-import com.hu.boot.bird.config.EmailConfig;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -22,9 +21,6 @@ import org.springframework.stereotype.Component;
 @Slf4j
 public class TestMailTask {
 
-    @Autowired
-    private EmailConfig emailConfig;
-
     public static String url = "https://www.amazon.de/dp/";
 
     //定时任务每3小时执行一次
@@ -41,7 +37,6 @@ public class TestMailTask {
     }
 
     private void runTask1() throws Exception {
-//        emailConfig.sendSimpleMail("hutiantian@tcl.com","测试","1231321",null);
 
     }
 
